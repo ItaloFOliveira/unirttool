@@ -86,7 +86,7 @@ def register():
 
 
 @app.route('/view_teachers')
-@login_required
+# @login_required # comentário para tirar a necessidade de login para ver os professores
 def view_teachers():
     teachers = Teacher.query.order_by(Teacher.overall_score.desc()).all()
     if(len(teachers)):
